@@ -6,14 +6,13 @@ export default class Bullet extends Component {
   constructor (props) {
     super(props);
     this.state = {textArea: ''};
-    this.addBullet = this.addBullet.bind(this);
   }
 
   handleChange = (e) => {
     this.setState({textArea: e.target.value});
   }
 
-  addBullet (e) {
+  addBullet = (e) => {
     if (this.state.textArea.length > 0) {
       this.props.children.push({text: this.state.textArea, children: []});
       this.setState({status: ''});
